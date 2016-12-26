@@ -1,0 +1,19 @@
+# zshrc
+
+# use emacs key bindings
+bindkey -e
+
+# OS-specific aliases, exports, etc.
+case "$OSTYPE" in
+    darwin*)  _source macos.zsh ;;
+    freebsd*) _source freebsd.zsh ;;
+    linux*)   _source linux.zsh ;;
+esac
+
+_source aliases.zsh
+_source completion.zsh
+_source config.zsh
+_source prompt.zsh
+
+# local additions or overwrites
+_source "$HOME/.zshrc.local"

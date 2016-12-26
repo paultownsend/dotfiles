@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+location="${@:-cambridge}"
+curl https://wttr.in/${location/ /+}

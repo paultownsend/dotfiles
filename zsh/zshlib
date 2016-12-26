@@ -1,0 +1,13 @@
+# zshlib
+
+_is_callable() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+_source() {
+    if [[ -f "$ZSH_DIR/$1" ]]; then
+        source "$ZSH_DIR/$1"
+    elif [[ -f "$1" ]]; then
+        source "$1"
+    fi
+}

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#
+# Display 256 color palette, or a specific color if provided.
+#
+# usage: clrmap [0-255]
+#
+
+if (( $# == 0 )); then
+    for i in {0..255}; do
+        printf "\x1b[38;5;${i}mcolor${i}\n"
+    done
+else
+    printf "\x1b[38;5;${1}mcolor${1}\n"
+fi
