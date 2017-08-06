@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if (( $# != 1 )); then
+    echo "usage: $0 <domain:port>"
+    exit 1
+else
+    echo -n | openssl s_client -connect $1
+fi
+
