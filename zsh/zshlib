@@ -4,6 +4,10 @@ _is_callable() {
     command -v "$1" >/dev/null 2>&1
 }
 
+_is_running() {
+    pgrep -x "$1" >/dev/null || return 1
+}
+
 _source() {
     if [[ -f "$ZSH_DIR/$1" ]]; then
         source "$ZSH_DIR/$1"

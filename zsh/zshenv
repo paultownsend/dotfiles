@@ -5,6 +5,7 @@ unsetopt GLOBAL_RCS
 
 # zsh variables
 export ZSH_DIR="$HOME/.zsh"
+export ZGEN_DIR="$HOME/.zgen"
 
 # functions used throughout config
 source "$ZSH_DIR/zshlib"

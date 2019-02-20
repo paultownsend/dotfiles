@@ -1,5 +1,28 @@
 # zshrc
 
+if [[ ! -d $ZGEN_DIR ]]; then
+    git clone https://github.com/tarjoilija/zgen.git $ZGEN_DIR
+fi
+
+_source "$ZGEN_DIR/zgen.zsh"
+
+# run `zgen reset` after adding any new loads
+if ! zgen saved; then
+    echo "Creating zgen save ..."
+
+    # completion
+    zgen oh-my-zsh lib/completion.zsh
+    zgen load zsh-users/zsh-completions
+
+    # terminal window/tab title support
+    zgen oh-my-zsh lib/termsupport.zsh
+
+    # suggest commands as you type based on history
+    zgen load zsh-users/zsh-autosuggestions
+
+    zgen save
+fi
+
 # use emacs key bindings
 bindkey -e
 
