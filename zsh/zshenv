@@ -29,3 +29,9 @@ path=(
     /bin
     "$path[@]"
 )
+
+# fzf
+if _is_callable fzf; then
+    export FZF_DEFAULT_COMMAND='fd --type f'
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+fi

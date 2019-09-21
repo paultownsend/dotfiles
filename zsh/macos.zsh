@@ -16,3 +16,7 @@ e() {
 }
 
 _is_callable emacs && alias emacs='emacs -nw'
+
+# fzf
+_is_callable fzf && _source /usr/local/opt/fzf/shell/key-bindings.zsh
+_is_callable fd && _source /usr/local/opt/fzf/shell/completion.zsh
