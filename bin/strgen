@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+#
+# a very basic random string/password generator.
+#
+# usage: strgen [length]
+#
+
+# default string length if none specified
+default_len=20
+
+if ! command -v openssl >/dev/null; then
+    echo "$0: error: openssl not found"
+    exit 1
+fi
+
+# generate 128 random bytes, encode with base64, join together and trim padding
+str="$(openssl rand -base64 128 | tr -d '\n=')"
+
+# pick a random part of the random string to get another random string for
+# even more randomness...
+rand="$((RANDOM % (${#str} - ${1:-$default_len})))"
+
+if (( $# > 0 )); then
+    echo ${str:$rand:$1}
+else
+    echo ${str:$rand:$default_len}
+fi
