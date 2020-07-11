@@ -1,0 +1,44 @@
+IMAPAccount fastmail
+Host imap.fastmail.com
+User avalon@fastmail.com
+PassCmd "security find-generic-password -s fastmail-mbsync -w"
+SSLType IMAPS
+SSLVersions TLSv1.2
+
+IMAPStore fastmail-remote
+Account fastmail
+
+MaildirStore fastmail-local
+Path ~/Mail/
+Inbox ~/Mail/INBOX
+SubFolders Verbatim
+
+Channel fastmail-all
+Master :fastmail-remote:
+Slave :fastmail-local:
+Patterns * !"Sent Items" !"Junk Mail" !"Notes" !"Sent" !"Spam"
+Create Both
+Expunge Both
+CopyArrivalDate yes
+SyncState *
+
+Channel fastmail-sent
+Master :fastmail-remote:"Sent Items"
+Slave :fastmail-local:Sent
+Create Both
+Expunge Both
+CopyArrivalDate yes
+SyncState *
+
+Channel fastmail-spam
+Master :fastmail-remote:"Junk Mail"
+Slave :fastmail-local:Spam
+Create Both
+Expunge Both
+CopyArrivalDate yes
+SyncState *
+
+Group fastmail
+Channel fastmail-all
+Channel fastmail-sent
+Channel fastmail-spam

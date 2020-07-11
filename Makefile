@@ -1,4 +1,4 @@
-.PHONY: bin git shell tmux zsh
+.PHONY: bin git mail shell tmux zsh
 all: .PHONY
 
 bin:
@@ -7,6 +7,10 @@ bin:
 
 git:
 	@ln -svf "$(CURDIR)/gitconfig" "$(HOME)/.gitconfig"
+
+mail:
+	@ln -svf "$(CURDIR)/mbsyncrc" "$(HOME)/.mbsyncrc"
+	@ln -svf "$(CURDIR)/msmtprc" "$(HOME)/.msmtprc"
 
 shell:
 	@ln -svf "$(CURDIR)/dircolors" "$(HOME)/.dircolors"
