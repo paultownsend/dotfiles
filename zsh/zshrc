@@ -10,6 +10,9 @@ _source "$ZGEN_DIR/zgen.zsh"
 if ! zgen saved; then
     echo "Creating zgen save ..."
 
+    # node version manager
+    zgen load lukechilds/zsh-nvm
+
     # completion
     zgen oh-my-zsh lib/completion.zsh
     zgen load zsh-users/zsh-completions

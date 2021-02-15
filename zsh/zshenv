@@ -16,6 +16,7 @@ export TZ=Europe/London
 export EDITOR=vim
 export PAGER=less
 export LESS='-R -i -M'
+export NVM_COMPLETION=true
 
 # paths
 typeset -U path
