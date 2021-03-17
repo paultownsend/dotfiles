@@ -1,5 +1,10 @@
 [user]
 	name = Paul Townsend
-	email = pt307@cam.ac.uk
+	email = pault@pault.org
 [core]
 	editor = vim
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
+
+[include]
+	path = ~/.gitconfig.local
