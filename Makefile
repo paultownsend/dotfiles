@@ -1,4 +1,4 @@
-.PHONY: bin git mail shell tmux zsh
+.PHONY: bin git gpg mail shell tmux zsh
 all: .PHONY
 
 bin:
@@ -7,6 +7,11 @@ bin:
 
 git:
 	@ln -svf "$(CURDIR)/gitconfig" "$(HOME)/.gitconfig"
+
+gpg:
+ifneq ($(wildcard ~/.gnupg),)
+	@ln -svf "$(CURDIR)/gnupg/gpg-agent.conf" "$(HOME)/.gnupg/gpg-agent.conf"
+endif
 
 mail:
 	@ln -svf "$(CURDIR)/mbsyncrc" "$(HOME)/.mbsyncrc"

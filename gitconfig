@@ -1,6 +1,7 @@
 [user]
 	name = Paul Townsend
 	email = pault@pault.org
+	signingkey = 376D16B0EE90C221FA770FDF9482A90C95D8B54D
 [core]
 	editor = vim
 [url "git@github.com:"]
