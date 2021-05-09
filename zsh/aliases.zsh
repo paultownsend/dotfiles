@@ -18,3 +18,6 @@ alias wget='wget -N'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias zgrep='zgrep --color=auto'
+
+# ephemeral ssh - no host key checking/saving, and no warnings
+alias essh='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o LogLevel=ERROR'
