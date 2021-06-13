@@ -11,6 +11,7 @@ git:
 gpg:
 ifneq ($(wildcard ~/.gnupg),)
 	@ln -svf "$(CURDIR)/gnupg/gpg-agent.conf" "$(HOME)/.gnupg/gpg-agent.conf"
+	@ln -svf "$(CURDIR)/gnupg/gpg.conf" "$(HOME)/.gnupg/gpg.conf"
 endif
 
 mail:
