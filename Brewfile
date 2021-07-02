@@ -45,6 +45,7 @@ brew "d12frosted/emacs-plus/emacs-plus@27"
 brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
 
 cask "alfred"
+cask "anki"
 cask "docker"
 cask "google-chrome"
 cask "iterm2"
@@ -54,6 +55,7 @@ cask "vagrant"
 cask "virtualbox"
 cask "virtualbox-extension-pack"
 cask "visual-studio-code"
+cask "zoom"
 
 mas "Moom", id: 419330170
 mas "Tampermonkey", id: 1482490089

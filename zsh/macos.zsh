@@ -5,6 +5,7 @@ _is_callable gdircolors && eval $(gdircolors -b $HOME/.dircolors)
 
 alias br=brew
 alias brup='brew upgrade'
+alias icloud-dl='brctl download'
 
 # Emacs
 e() {
